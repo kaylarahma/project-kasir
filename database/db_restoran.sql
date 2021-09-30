@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Agu 2019 pada 03.11
--- Versi server: 10.1.38-MariaDB
--- Versi PHP: 7.3.2
+-- Waktu pembuatan: 30 Sep 2021 pada 05.23
+-- Versi server: 10.4.19-MariaDB
+-- Versi PHP: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -39,9 +38,6 @@ CREATE TABLE `tb_level` (
 
 INSERT INTO `tb_level` (`id_level`, `nama_level`) VALUES
 (1, 'Administrator'),
-(2, 'Waiter'),
-(3, 'Kasir'),
-(4, 'Owner'),
 (5, 'Pelanggan');
 
 -- --------------------------------------------------------
@@ -64,10 +60,22 @@ CREATE TABLE `tb_masakan` (
 --
 
 INSERT INTO `tb_masakan` (`id_masakan`, `nama_masakan`, `harga`, `stok`, `status_masakan`, `gambar_masakan`) VALUES
-(8, 'Sate Ayam', '11000', 15, 'tersedia', 'Sate Ayam.jpeg'),
-(14, 'Sayur Asem', '7500', 78, 'tersedia', 'Sayur Asem.jpeg'),
-(18, 'Ayam Geprek', '11000', 7, 'tersedia', 'Ayam Geprek.jpeg'),
-(19, 'Nasi Pecel', '7000', 23, 'tersedia', 'Nasi Pecel.jpg');
+(29, 'Oreo Smooth', '21000', 100, 'tersedia', 'Oreo Smooth.jpg'),
+(30, 'Blue Drink', '18000', 100, 'tersedia', 'Blue Drink.jpg'),
+(31, 'Avocado', '21000', 100, 'tersedia', 'Avocado.jpg'),
+(32, 'Strawbery ', '23000', 100, 'tersedia', 'Strawbery .jpg'),
+(33, 'Caramel', '23000', 100, 'tersedia', 'Caramel.jpg'),
+(34, 'Ice Blande', '23000', 100, 'tersedia', 'Ice Blande.jpg'),
+(35, 'Coffe Been', '21000', 100, 'tersedia', 'Coffe Been.jpg'),
+(36, 'Chocolate', '38000', 100, 'tersedia', 'Chocolate.jpg'),
+(37, 'Mozarella', '25000', 100, 'tersedia', 'Mozarella.jpg'),
+(38, 'Marshmellow', '27000', 100, 'tersedia', 'Marshmellow.jpg'),
+(39, 'Waffle', '20000', 100, 'tersedia', 'Waffle.jpg'),
+(40, 'Spagetty', '25000', 100, 'tersedia', 'Spagetty.jpg'),
+(41, 'Nasi Goreng', '15000', 100, 'tersedia', 'Nasi Goreng.jpg'),
+(42, 'Mini Pizza', '10000', 100, 'tersedia', 'Mini Pizza.jpg'),
+(43, 'Diamond', '41000', 94, 'tersedia', 'Diamond.jpg'),
+(44, 'Rolade', '17000', 97, 'tersedia', 'Rolade.jpg');
 
 -- --------------------------------------------------------
 
@@ -92,13 +100,7 @@ CREATE TABLE `tb_order` (
 --
 
 INSERT INTO `tb_order` (`id_order`, `id_admin`, `id_pengunjung`, `waktu_pesan`, `no_meja`, `total_harga`, `uang_bayar`, `uang_kembali`, `status_order`) VALUES
-(14, 1, 9, '2019-08-03 12:43:52', 1, '48000', '50000', '2000', 'sudah bayar'),
-(15, 1, 1, '2019-08-04 16:25:45', 1, '44000', '50000', '6000', 'sudah bayar'),
-(16, 1, 1, '2019-08-04 16:35:24', 8, '105500', '150000', '44500', 'sudah bayar'),
-(18, 1, 7, '2019-08-04 16:37:58', 8, '87000', '100000', '13000', 'sudah bayar'),
-(19, 1, 1, '2019-08-04 17:17:09', 1, '22000', '50000', '28000', 'sudah bayar'),
-(20, 1, 6, '2019-08-04 18:04:22', 8, '29500', '50000', '20500', 'sudah bayar'),
-(21, 0, 10, '2019-08-07 08:54:23', 1, '22000', '', '', 'belum bayar');
+(26, 0, 16, '2021-09-30 06:50:55', 2, '297000', '', '', 'belum bayar');
 
 -- --------------------------------------------------------
 
@@ -120,21 +122,9 @@ CREATE TABLE `tb_pesan` (
 --
 
 INSERT INTO `tb_pesan` (`id_pesan`, `id_user`, `id_order`, `id_masakan`, `jumlah`, `status_pesan`) VALUES
-(33, 9, 14, 14, 2, 'sudah'),
-(34, 9, 14, 8, 3, 'sudah'),
-(35, 1, 15, 19, 2, 'sudah'),
-(36, 1, 15, 14, 4, 'sudah'),
-(37, 1, 16, 19, 3, 'sudah'),
-(38, 1, 16, 14, 1, 'sudah'),
-(39, 1, 16, 8, 7, 'sudah'),
-(43, 7, 18, 19, 4, 'sudah'),
-(44, 7, 18, 14, 2, 'sudah'),
-(45, 7, 18, 8, 4, 'sudah'),
-(46, 1, 19, 19, 1, 'sudah'),
-(47, 1, 19, 14, 2, 'sudah'),
-(48, 6, 20, 8, 2, 'sudah'),
-(49, 6, 20, 14, 1, 'sudah'),
-(50, 10, 21, 18, 2, '');
+(62, 16, 25, 22, 1, ''),
+(63, 16, 26, 44, 3, ''),
+(64, 16, 26, 43, 6, '');
 
 -- --------------------------------------------------------
 
@@ -154,11 +144,9 @@ CREATE TABLE `tb_stok` (
 --
 
 INSERT INTO `tb_stok` (`id_stok`, `id_pesan`, `jumlah_terjual`, `status_cetak`) VALUES
-(1, 46, 1, 'belum cetak'),
-(2, 47, 2, 'belum cetak'),
-(3, 48, 2, 'belum cetak'),
-(4, 49, 1, 'belum cetak'),
-(5, 50, 2, 'belum cetak');
+(16, 61, 4, 'belum cetak'),
+(18, 63, 3, 'belum cetak'),
+(19, 64, 6, 'belum cetak');
 
 -- --------------------------------------------------------
 
@@ -180,14 +168,8 @@ CREATE TABLE `tb_user` (
 --
 
 INSERT INTO `tb_user` (`id_user`, `username`, `password`, `nama_user`, `id_level`, `status`) VALUES
-(1, 'hendrik24', '123', 'Hendrik Setiawan', 1, 'aktif'),
-(6, 'hendro', '123', 'Hendro', 2, 'aktif'),
-(7, 'fitri', '123', 'Fitri', 3, 'aktif'),
-(8, 'slamet', '123', 'Slamet', 4, 'aktif'),
-(9, 'sugiastutik', '123', 'Sugiastutik', 4, 'aktif'),
-(10, 'topik', '123', 'Moh Taofik RR', 5, 'aktif'),
-(11, 'selpi', '123', 'Selviana Ariani', 5, 'aktif'),
-(12, 'kesi', '123', 'Sukesi', 5, 'aktif');
+(1, 'admin', '123', 'kaylarahma', 1, 'aktif'),
+(16, 'kaylalucu', '12345', 'kayla', 5, 'aktif');
 
 --
 -- Indexes for dumped tables
@@ -247,31 +229,31 @@ ALTER TABLE `tb_level`
 -- AUTO_INCREMENT untuk tabel `tb_masakan`
 --
 ALTER TABLE `tb_masakan`
-  MODIFY `id_masakan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_masakan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_order`
 --
 ALTER TABLE `tb_order`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_pesan`
 --
 ALTER TABLE `tb_pesan`
-  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_stok`
 --
 ALTER TABLE `tb_stok`
-  MODIFY `id_stok` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_stok` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

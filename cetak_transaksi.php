@@ -120,8 +120,8 @@ page[size="dipakai"][layout="landscape"] {
           RESTAURANT CEPAT SAJI
         </h4>
         <span>
-          Jl. Imam Bonjol No. 103 Ds. Tembarak, Kec. Kertosono, Kab. Nganjuk, Jatim<br>
-          Telp. +6289 xxx xxx xxx || E-mail exsample@gmail.com
+         Jl.Inhoftank No.16 Kec.Astana Anyar Kel.Pelindung Hewan, Kota Bandung<br>
+          Telp. +628 822 352 1183 || E-mail maudymeilisa3@gmail.com
         </span>
       </center>
             <hr>

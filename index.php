@@ -32,8 +32,8 @@ if (isset($_SESSION['username'])) {
 <!--===============================================================================================-->
 </head>
 <body>
-	<div class="limiter">
-		<div class="container-login100" style="background-image: url('template/masuk/images/img-01.jpg');">
+	<div class="">
+		<div class="container-login100" style="background-image: url('template/masuk/images/cendol.jpg');">
 			<div class="wrap-login100 p-t-120 p-b-30">
 				<form action="" method="post" class="login100-form validate-form">
 					<?php
@@ -51,11 +51,11 @@ unset($_SESSION['eror']);
     }
     ?>
 					<div class="login100-form-avatar">
-						<img src="template/masuk/images/logo.jpg" >
+						<img src="template/masuk/images/cendol.jpg" >
 					</div>
 
 					<span class="login100-form-title p-t-20 p-b-45">
-						NANNY'S CAFFE
+						ELIZABET'S
 					</span>
 					<div class="wrap-input100 validate-input m-b-10" data-validate = "Username is required">
 						<input class="input100" type="text" name="username" placeholder="Username">
