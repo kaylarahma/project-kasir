@@ -168,8 +168,8 @@ CREATE TABLE `tb_user` (
 --
 
 INSERT INTO `tb_user` (`id_user`, `username`, `password`, `nama_user`, `id_level`, `status`) VALUES
-(1, 'admin', '123', 'kaylarahma', 1, 'aktif'),
-(16, 'kaylalucu', '12345', 'kayla', 5, 'aktif');
+(1, 'admin', '123', 'maudymei', 1, 'aktif'),
+(16, 'maudymeilisa', '12345', 'maudy', 5, 'aktif');
 
 --
 -- Indexes for dumped tables
